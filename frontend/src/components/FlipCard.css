@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    justify-content: center; /* Center align the flip cards */
+    gap: 30px; /* Increase gap between flip cards */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .flip {
+    width: 500px;
+    display: flex;
+    position: relative;
+  }
+  
+  .front,
+  .back {
+    width: inherit;
+    height: 300px;
+    background: #313131;
+    color: rgb(255, 255, 255);
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 1em 2em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition-timing-function: cubic-bezier(0.1, 0.8, 0.3, 1.2);
+    transition-duration: 0.5s;
+    transition-property: transform, opacity;
+  }
+  
+  .front {
+    transform: rotateX(0deg);
+  }
+  
+  .back {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: rotateY(-180deg);
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  p {
+    color: #999999;
+    font-size: 1.2rem;
+    line-height: 160%;
+    text-align: center;
+  }
+  
+  .back {
+    opacity: 0;
+    width: 436px;
+  }
+  
+  h1 {
+    background: #ffffff8d;
+    color: #000000cc;
+    font-size: 2.3rem;
+    font-weight: 200;
+  }
+  
+  .flip:hover > .back {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  
+  .flip.flip-vertical > .back {
+    transform: rotateX(-180deg);
+  }
+  
+  .flip.flip-vertical:hover > .front {
+    transform: rotateX(180deg);
+  }
+  
+  .flip.flip-vertical:hover > .back {
+    transform: rotateX(0deg);
+  }
+  
